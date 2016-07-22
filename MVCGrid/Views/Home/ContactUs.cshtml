@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ContactUs</h2>
+
+<h3>Welcome to My first MVC Contact page</h3>
+@{ string[] courses = { "C#", "ASP", "SQL", "MVC" }; }
+
+<h4>Coursename</h4>
+<ul>
+    @{ foreach (string item in courses)
+        {
+            <li>@item</li>
+        }
+    }
+</ul>
+

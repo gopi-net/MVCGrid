@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AboutUs</h2>
+
+<h3>Welcome to My first MVC About page</h3>
+
+@{ string[] courses = { "C#", "ASP", "SQL", "MVC" }; }
+
+<table border="1">
+    <tr>
+        <th>S.no</th>
+        <th>CourseName</th>
+    </tr>
+    @{ for (int i = 0; i < courses.Length; i++)
+        {
+            <tr>
+                <td>
+                    @(i + 1)
+                </td>
+                <td>
+                    @courses[i]
+                </td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login Page</h2>
+@using (Html.BeginForm())
+{
+    <table align="center">
+        <tr>
+            <td>
+                @Html.Label("Enter Username", new { @class = "label", @id = "lblUsernmae" })
+            </td>
+            <td>
+                @Html.TextBox("Uid", "admin", new { @class = "form-conntrol", @id = "txtUsername" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Password")
+            </td>
+            <td>
+                @Html.Password("Pwd", "", new { @class = "form-control", @id = "txtPassword" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" name="signin" id="btnSignIn" value="Login" />
+            </td>
+
+
+        </tr>
+    </table>
+}
+@*@{
+        if (IsPost)
+        {
+            var userName = Request["Uid"];
+            var password = Request["Pwd"];
+            if (userName=="admin" && password=="admin")
+            {
+                <span style="color:mediumvioletred">
+                    Welcome to @userName
+                </span>
+            }
+            else
+            {
+                <span style="color:red">
+                   Invalid Username and Password
+                </span>
+            }
+        }
+    }*@

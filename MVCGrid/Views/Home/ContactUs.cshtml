@@ -7,14 +7,30 @@
 <h2>ContactUs</h2>
 
 <h3>Welcome to My first MVC Contact page</h3>
-@{ string[] courses = { "C#", "ASP", "SQL", "MVC" }; }
 
-<h4>Coursename</h4>
-<ul>
-    @{ foreach (string item in courses)
-        {
-            <li>@item</li>
-        }
+
+<h1>Product Informations</h1>
+
+<form action="~/Home/ContactUs" method="post">
+    Product Name : <input type="text" name="txtProduct" />
+    <br />
+    Unit Price : <input type="text" name="txtPrice" />
+    <br />
+    Quantity : <input type="text" name="txtItems" />
+    <br/>
+    <input type="submit" name="btnCount" id="btnCountTotal"/>
+</form>
+@{
+    if (IsPost)
+    {
+        var product = Request["txtProduct"];
+        var price = Convert.ToInt32(Request["txtPrice"]);
+        var items= Convert.ToInt32(Request["txtItems"]);
+        var total = price * items;
+        <div>
+            <h3 style="color:mediumvioletred">
+                @items @product's  total price is @total
+            </h3>
+        </div>
     }
-</ul>
-
+ }

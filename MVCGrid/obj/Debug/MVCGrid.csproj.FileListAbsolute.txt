@@ -28,6 +28,10 @@ E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\System.Web.Webpages.Deployment.xml
 E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\System.Web.Webpages.Razor.xml
 E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\System.Web.Helpers.xml
 E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\System.Web.Mvc.xml
-E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\obj\Debug\MVCGrid.csprojResolveAssemblyReference.cache
 E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\obj\Debug\MVCGrid.dll
 E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\obj\Debug\MVCGrid.pdb
+E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\EntityFramework.dll
+E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\EntityFramework.SqlServer.dll
+E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\EntityFramework.xml
+E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\bin\EntityFramework.SqlServer.xml
+E:\VS 2015\Git-Halls\MVCGrid\MVCGrid\obj\Debug\MVCGrid.csprojResolveAssemblyReference.cache

@@ -1,0 +1,31 @@
+﻿@using MVCGrid.Models
+@model Register
+
+@{
+    ViewBag.Title = "UserDelete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserDelete</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Username</th>
+        </tr>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Email</td>
+            <td>@Model.Mobile</td>
+            <td>@Model.Username</td>
+        </tr>
+    </table>
+    <input type="submit" id="btnDelete" name="btnDelete" value="Delete"/>
+}
+<div>
+    <a href="~/Home/StudentIndex">Back....</a>
+</div>

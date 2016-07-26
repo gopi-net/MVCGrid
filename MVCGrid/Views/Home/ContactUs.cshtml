@@ -34,3 +34,10 @@
         </div>
     }
  }
+@{
+    if (!IsPost)
+    {
+        string str = (string)TempData["loginError"];
+        <span style="color:red">@str</span>
+    }
+}

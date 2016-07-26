@@ -48,16 +48,34 @@ namespace MVCGrid.Controllers
         //}
 
         // Post: Login using model object parameters
+        //[HttpPost]
+        //public ActionResult Login(Login obj)
+        //{
+        //    if (obj.Uid == "admin" && obj.Pwd == "admin")
+        //    {
+        //        Response.Write("<span>welcome to" + obj.Uid + "</span>");
+        //    }
+        //    else
+        //    {
+        //        Response.Write("<span>Invalid Username or Password");
+        //    }
+        //    return View();
+        //}
+
+        // Post : Login using ViewData sharing
+
         [HttpPost]
-        public ActionResult Login(Login obj)
+        public ActionResult Login(Login newLogin)
         {
-            if (obj.Uid == "admin" && obj.Pwd == "admin")
+            if (newLogin.Uid == "admin" && newLogin.Pwd == "admin")
             {
-                Response.Write("<span>welcome to" + obj.Uid + "</span>");
+                ViewData["Uid"] = newLogin.Uid;
+                ViewBag.Result = true;
             }
             else
             {
-                Response.Write("<span>Invalid Username or Password");
+                ViewBag.Result = false;
+                TempData["loginError"] = "Invalid Username or Password";
             }
             return View();
         }

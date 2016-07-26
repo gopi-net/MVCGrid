@@ -1,0 +1,35 @@
+﻿@using MVCGrid.Models
+@model Register
+
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("UserName");
+    @Html.TextBox("UserName");<br /><br />
+
+    @Html.Label("Name");
+    @Html.TextBox("Name");<br /><br />
+
+    @Html.Label("Email Id");
+    @Html.TextBox("Email");<br /><br />
+
+
+    @Html.Label("Mobile Number");
+    @Html.TextBox("Mobile");<br /><br />
+
+
+    @Html.Label("Password");
+    @Html.TextBox("Password");<br /><br />
+
+    <input type="submit" id="btnCreate" name="btnCreate"  value="Register"/>
+}
+<div>
+    <a href="~/Home/StudentIndex">Back....</a>
+</div>

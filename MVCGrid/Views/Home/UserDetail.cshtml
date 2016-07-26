@@ -1,0 +1,19 @@
+﻿@using MVCGrid.Models
+@model Register
+
+@{
+    ViewBag.Title = "UserDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserDetail</h2>
+
+<div>
+    Name:    @Model.Name<br />
+    Email:   @Model.Email<br />
+    Mobile:  @Model.Mobile<br />
+    Username:@Model.Username<br />
+</div>
+<div>
+    <a href="~/Home/StudentIndex">Back...</a>
+</div>

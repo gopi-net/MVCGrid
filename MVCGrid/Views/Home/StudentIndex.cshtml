@@ -1,0 +1,39 @@
+﻿@using MVCGrid.Models
+@model  IEnumerable<Register>
+
+
+@{
+    ViewBag.Title = "StudentIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>StudentIndex</h2>
+
+<h2>All Student data</h2>
+
+@Html.ActionLink("Create New!!!!", "Register", "Home");
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Username</th>
+    </tr>
+    @{
+        foreach (Register item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Mobile</td>
+                <td>@item.Username</td>
+                <td>
+                    <a href="~/Home/UserDetail/@item.Username">Details</a>
+                    <a href="~/Home/UserEdit/@item.Username">Edit</a>
+                    <a href="~/Home/UserDelete/@item.Username">Delete</a>
+                </td>
+            </tr>
+        }
+    }
+</table>

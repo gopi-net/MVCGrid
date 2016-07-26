@@ -1,4 +1,5 @@
-﻿
+﻿@using MVCGrid.Models;
+@Model List<Student>
 @{
     ViewBag.Title = "AboutUs";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,6 +25,26 @@
                 <td>
                     @courses[i]
                 </td>
+            </tr>
+        }
+    }
+</table>
+    <h2>Student Details</h2>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Gender</th>
+    </tr>
+    @{
+        foreach (Student studentItem in Model)
+        {
+           
+            <tr>
+                
+                <td>@studentItem.Name</td>
+                <td>@studentItem.Class</td>
+                <td>@studentItem.Gender</td>
             </tr>
         }
     }

@@ -1,0 +1,27 @@
+﻿@using MVCGrid.Models
+@model Register
+
+@{
+    ViewBag.Title = "UserEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserEdit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Name");
+    @Html.TextBox("Name", Model.Name);<br /><br />
+    @Html.Label("Email");
+    @Html.TextBox("Email", Model.Email);<br /><br />
+    @Html.Label("Mobile");
+    @Html.TextBox("Mobile", Model.Mobile);<br /><br />
+    @Html.Label("UserName");
+    @Html.TextBox("UserName", Model.Username,new {@ReadOnly=true });<br /><br />
+    <br /><br />
+    <input type="submit" id="btnEdit" value="Update" name="btnEdit" />
+    <br /><br />
+}
+<div>
+    <a href="~/Home/StudentIndex">Back....</a>
+</div>

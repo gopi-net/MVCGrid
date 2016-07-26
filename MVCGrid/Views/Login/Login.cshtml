@@ -5,34 +5,37 @@
 }
 
 <h2>Login Page</h2>
-@using (Html.BeginForm())
-{
-    <table align="center">
-        <tr>
-            <td>
-                @Html.Label("Enter Username", new { @class = "label", @id = "lblUsernmae" })
-            </td>
-            <td>
-                @Html.TextBox("Uid", "admin", new { @class = "form-conntrol", @id = "txtUsername" })
-            </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.Label("Password")
-            </td>
-            <td>
-                @Html.Password("Pwd", "", new { @class = "form-control", @id = "txtPassword" })
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center">
-                <input type="submit" name="signin" id="btnSignIn" value="Login" />
-            </td>
-
-
-        </tr>
-    </table>
-}
+<div id="LoginStyle">
+    @using (Html.BeginForm())
+    {
+        <table align="center" id="tblLogin">
+            <tr>
+                <td>
+                    @Html.Label("Enter Username", new { @class = "label", @id = "lblUsernmae" })
+                </td>
+                <td>
+                    @Html.TextBox("Uid", "admin", new { @class = "form-conntrol", @id = "txtUsername" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Password")
+                </td>
+                <td>
+                    @Html.Password("Pwd", "", new { @class = "form-control", @id = "txtPassword" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="signin" id="btnSignIn" value="Login" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.ActionLink("Register Here!!!!","Register","Home")</td>
+            </tr>
+        </table>
+    }
+</div>
 @*@{
         if (IsPost)
         {
@@ -51,4 +54,36 @@
                 </span>
             }
         }
-    }*@
+    }*@ 
+
+@*@{
+    if (IsPost)
+    {
+        bool result = ViewBag.Result;
+        if (result)
+        {
+            string name = (string)ViewData["Uid"];
+            <span style="color:lightgreen">Welcome to  @name</span>
+            
+        }
+        else
+        {
+            <span style="color:red">Invalid username or Password</span>
+        }
+    }
+}*@
+
+@{
+    if (IsPost)
+    {
+        bool result = ViewBag.Result;
+        if (result)
+        {
+            Response.Redirect("~/home/StudentIndex");
+        }
+        else
+        {
+            Response.Redirect("~/home/contactus");
+        }
+    }
+}

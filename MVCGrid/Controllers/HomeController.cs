@@ -77,11 +77,10 @@ namespace MVCGrid.Controllers
             Register newreg = db.GetUser(id);
             return View(newreg);
         }
-
-        [HttpPost]
-        public ActionResult UserDelete(Register reg)
+        public ActionResult DeleteUser(string id)
         {
-            db.DeleteUser(reg);
+            //string id = Request["id"].ToString();
+            db.DeleteUser(id);
             return RedirectToAction("StudentIndex");
         }
     }

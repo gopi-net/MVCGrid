@@ -8,7 +8,7 @@
 
 <h2>UserDelete</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("DeleteUser","home","prasad"))
 {
     <table>
         <tr>
@@ -24,7 +24,7 @@
             <td>@Model.Username</td>
         </tr>
     </table>
-    <input type="submit" id="btnDelete" name="btnDelete" value="Delete"/>
+    @Html.ActionLink("Delete", "DeleteUser", new { @id = Model.Username }, null);
 }
 <div>
     <a href="~/Home/StudentIndex">Back....</a>

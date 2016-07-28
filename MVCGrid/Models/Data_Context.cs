@@ -84,7 +84,7 @@ namespace MVCGrid.Models
             int result = default(int);
             try
             {
-                command = string.Format("Update Registers set Name='{0}',Email='{1}',Mobile='{2}'", newReg.Name, newReg.Email, newReg.Mobile);
+                command = string.Format("Update Registers set Name='{0}',Email='{1}',Mobile='{2}' where Username='{3}'", newReg.Name, newReg.Email, newReg.Mobile,newReg.Username);
                 SqlCommand commander = new SqlCommand(command, connection);
                 connection.Open();
                 result = commander.ExecuteNonQuery();
@@ -96,12 +96,12 @@ namespace MVCGrid.Models
             }
             return result;
         }
-        public int DeleteUser(Register deleteData)
+        public int DeleteUser(string deleteData)
         {
             int result = default(int);
             try
             {
-                command = string.Format("Delete From Registers where Username='"+ deleteData.Username + "'");
+                command = string.Format("Delete From Registers where Username='"+ deleteData + "'");
                 SqlCommand commander = new SqlCommand(command, connection);
                 connection.Open();
                 result = commander.ExecuteNonQuery();

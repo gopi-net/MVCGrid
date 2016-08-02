@@ -22,7 +22,7 @@ namespace MVCGrid.Models
         public string Gender { get; set; }
     }
 
-    public class Register
+    public class Registers
     {
         public string Name { get; set; }
         public string Email { get; set; }

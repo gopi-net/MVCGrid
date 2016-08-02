@@ -56,6 +56,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -99,17 +101,49 @@
   <ItemGroup>
     <Content Include="Content\Main.css" />
     <Content Include="Global.asax" />
+    <Content Include="Models\EmployeeTrial.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeTrial.edmx</DependentUpon>
+      <LastGenOutput>EmployeeTrial.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EmployeeTrial.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeTrial.edmx</DependentUpon>
+      <LastGenOutput>EmployeeTrial.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Home2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Data_Context.cs" />
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>EmployeeTrial.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeTrial.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeTrial.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeTrial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeTrial.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmployeeTrial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeTrial.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Register.cs">
+      <DependentUpon>EmployeeTrial.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +159,15 @@
     <Content Include="Views\Home\UserDetail.cshtml" />
     <Content Include="Views\Home\UserEdit.cshtml" />
     <Content Include="Views\Home\UserDelete.cshtml" />
+    <EntityDeploy Include="Models\EmployeeTrial.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmployeeTrial.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EmployeeTrial.edmx.diagram">
+      <DependentUpon>EmployeeTrial.edmx</DependentUpon>
+    </Content>
+    <Content Include="Views\Home2\Index.cshtml" />
+    <Content Include="Views\Home2\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

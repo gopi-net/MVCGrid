@@ -1,0 +1,40 @@
+﻿ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightseagreen;
+}
+
+li {
+    float: left;
+    margin-left:200px;
+}
+
+    li a {
+        display: block;
+        color: red;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+        li a:hover {
+            background-color: #111111;
+        }
+
+footer {
+    margin-top:50px;
+    color:red;
+    background-color: lightseagreen;
+    text-align: center;
+    padding: 16px;
+}
+body{
+     text-align: center;
+}
+table{
+    text-align:center;
+    position:center;
+}
+

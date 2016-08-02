@@ -1,0 +1,27 @@
+﻿@using MVCGrid.Models
+@model IEnumerable<Employee>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Employee Details</h2>
+<a href="/Home2/Create">Create New</a>
+<br />
+<table border="1">
+    @{ 
+        foreach (Employee item in Model)
+        {
+            <tr>
+                <td>@item.EmpId</td>
+                <td>@item.Ename</td>
+                <td>@item.DeptName</td>
+                <td>@item.Sal</td>
+                <td>@item.Position</td>
+            </tr>
+        }
+    }
+</table>
+

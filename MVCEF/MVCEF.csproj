@@ -111,7 +111,25 @@
       <DependentUpon>Emplyoee.edmx</DependentUpon>
       <LastGenOutput>Emplyoee.cs</LastGenOutput>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="Models\StudentData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentData.edmx.diagram">
+      <DependentUpon>StudentData.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Models\StudentData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentData.edmx</DependentUpon>
+      <LastGenOutput>StudentData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentData.edmx</DependentUpon>
+      <LastGenOutput>StudentData.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -128,8 +146,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Course.cs">
+      <DependentUpon>StudentData.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
       <DependentUpon>Emplyoee.tt</DependentUpon>
@@ -149,6 +171,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Emplyoee.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>StudentData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentCourseVM.cs" />
+    <Compile Include="Models\StudentData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentData.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +205,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Student\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

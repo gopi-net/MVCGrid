@@ -1,0 +1,33 @@
+﻿@using MVCEF.Models
+@model StudentCourseVM
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@{
+    <table border="1">
+        @foreach (var item in Model.StudentList)
+        {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.EnrollmentDate</td>
+            <td>@item.CourseId</td>
+        </tr>
+        }
+    </table>
+    <table border="1">
+        @foreach (var item in Model.CourseList)
+        {
+        <tr>
+            <td>@item.CourseID</td>
+            <td>@item.Title</td>
+            <td>@item.Credits</td>
+        </tr>
+        }
+    </table>
+}
